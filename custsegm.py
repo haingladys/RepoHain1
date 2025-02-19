@@ -55,22 +55,6 @@ data = feature_engineering(data)
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-floats, objects = [], []
-for col in df.columns:
-    if df[col].dtype == object:
-        objects.append(col)
-    elif df[col].dtype == float:
-        floats.append(col)
-
-print(objects)
-print(floats)
-
-plt.subplots(figsize=(10, 10))
-for i, col in enumerate(objects):
-    plt.subplot(2, 2, i + 1)
-    sb.countplot(df[col])
-plt.show()
-
 # Elbow Method to find optimal number of clusters
 wcss = []
 for i in range(1, 11):
